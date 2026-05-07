@@ -57,10 +57,10 @@ export function DashboardPage() {
   const activeProjects = projects.filter(p => p.status === 'active')
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-[var(--color-muted-foreground)]">Welcome back! Here's what's happening.</p>
+        <h1 className="text-3xl font-semibold uppercase tracking-[0.06em]">Dashboard</h1>
+        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">Welcome back! Here&apos;s what&apos;s happening.</p>
       </div>
 
       {/* Stats */}
@@ -68,8 +68,8 @@ export function DashboardPage() {
         {stats.map((stat) => (
           <Card key={stat.title}>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-[var(--color-muted-foreground)]">{stat.title}</CardTitle>
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--color-primary)]/10">
+              <CardTitle className="text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-muted-foreground)]">{stat.title}</CardTitle>
+              <div className="flex items-center justify-center w-8 h-8 rounded-sm bg-[var(--color-primary)]/10">
                 <stat.icon className="w-4 h-4 text-[var(--color-primary)]" />
               </div>
             </CardHeader>
@@ -77,11 +77,11 @@ export function DashboardPage() {
               <div className="text-2xl font-bold">{stat.value}</div>
               <div className="flex items-center gap-1 mt-1">
                 {stat.trend === 'up' ? (
-                  <TrendingUp className="w-3 h-3 text-emerald-500" />
+                  <TrendingUp className="w-3 h-3 text-[var(--color-primary)]" />
                 ) : (
-                  <TrendingDown className="w-3 h-3 text-[var(--color-destructive)]" />
+                  <TrendingDown className="w-3 h-3 text-[var(--color-ring)]" />
                 )}
-                <span className={`text-xs ${stat.trend === 'up' ? 'text-emerald-500' : 'text-[var(--color-destructive)]'}`}>
+                <span className={`text-xs ${stat.trend === 'up' ? 'text-[var(--color-primary)]' : 'text-[var(--color-ring)]'}`}>
                   {stat.change}
                 </span>
                 <span className="text-xs text-[var(--color-muted-foreground)]">{stat.description}</span>

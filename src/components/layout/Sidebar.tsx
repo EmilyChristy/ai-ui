@@ -26,17 +26,17 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'relative flex flex-col h-screen border-r bg-[var(--color-card)] transition-all duration-300',
+        'relative flex flex-col h-screen border-r border-[#212226] bg-[var(--color-primary)] text-[var(--color-primary-foreground)] transition-all duration-300',
         collapsed ? 'w-16' : 'w-60'
       )}
     >
       {/* Logo */}
-      <div className={cn('flex items-center gap-3 px-4 py-5 border-b', collapsed && 'justify-center px-0')}>
-        <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-[var(--color-primary)] text-[var(--color-primary-foreground)]">
+      <div className={cn('flex items-center gap-3 px-4 py-5 border-b border-white/10', collapsed && 'justify-center px-0')}>
+        <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded bg-white/10 text-[var(--color-primary-foreground)]">
           <Sparkles className="w-4 h-4" />
         </div>
         {!collapsed && (
-          <span className="font-bold text-base tracking-tight">AI UI</span>
+          <span className="font-semibold text-sm tracking-[0.08em] uppercase">AI UI</span>
         )}
       </div>
 
@@ -51,8 +51,8 @@ export function Sidebar() {
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                 isActive
-                  ? 'bg-[var(--color-primary)] text-[var(--color-primary-foreground)]'
-                  : 'text-[var(--color-muted-foreground)] hover:bg-[var(--color-accent)] hover:text-[var(--color-accent-foreground)]',
+                  ? 'bg-white/10 text-white'
+                  : 'text-white/70 hover:bg-white/5 hover:text-white',
                 collapsed && 'justify-center px-2'
               )}
               title={collapsed ? item.label : undefined}
@@ -68,7 +68,7 @@ export function Sidebar() {
       <button
         onClick={() => setCollapsed(!collapsed)}
         className={cn(
-          'absolute -right-3 top-20 flex items-center justify-center w-6 h-6 rounded-full border bg-[var(--color-background)] text-[var(--color-muted-foreground)] hover:text-[var(--color-foreground)] hover:border-[var(--color-ring)] transition-colors shadow-sm z-10'
+          'absolute -right-3 top-20 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)] transition-colors hover:border-[var(--color-ring)] hover:text-[var(--color-foreground)]'
         )}
         aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       >
