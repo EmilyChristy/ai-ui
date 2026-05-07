@@ -26,12 +26,12 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'relative flex flex-col h-screen border-r border-[#212226] bg-[var(--color-primary)] text-[var(--color-primary-foreground)] transition-all duration-300',
+        'relative flex flex-col h-screen border-r border-[var(--color-border)] bg-[var(--color-primary)] text-[var(--color-primary-foreground)] transition-all duration-300',
         collapsed ? 'w-16' : 'w-60'
       )}
     >
       {/* Logo */}
-      <div className={cn('flex items-center gap-3 px-4 py-5 border-b border-white/10', collapsed && 'justify-center px-0')}>
+      <div className={cn('flex items-center gap-3 border-b border-[var(--color-border)] px-4 py-5', collapsed && 'justify-center px-0')}>
         <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded bg-white/10 text-[var(--color-primary-foreground)]">
           <Sparkles className="w-4 h-4" />
         </div>
@@ -68,7 +68,7 @@ export function Sidebar() {
       <button
         onClick={() => setCollapsed(!collapsed)}
         className={cn(
-          'absolute -right-3 top-20 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-card)] text-[var(--color-muted-foreground)] transition-colors hover:border-[var(--color-ring)] hover:text-[var(--color-foreground)]'
+          'absolute -right-3 top-20 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white/80 transition-colors hover:border-[var(--color-ring)] hover:text-white'
         )}
         aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
       >

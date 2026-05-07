@@ -60,7 +60,7 @@ export function DashboardPage() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-semibold uppercase tracking-[0.06em]">Dashboard</h1>
-        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">Welcome back! Here&apos;s what&apos;s happening.</p>
+        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">Welcome back! Here's what's happening.</p>
       </div>
 
       {/* Stats */}
@@ -79,9 +79,9 @@ export function DashboardPage() {
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 text-[var(--color-primary)]" />
                 ) : (
-                  <TrendingDown className="w-3 h-3 text-[var(--color-ring)]" />
+                  <TrendingDown className="w-3 h-3 text-[var(--color-destructive)]" />
                 )}
-                <span className={`text-xs ${stat.trend === 'up' ? 'text-[var(--color-primary)]' : 'text-[var(--color-ring)]'}`}>
+                <span className={`text-xs ${stat.trend === 'up' ? 'text-[var(--color-primary)]' : 'text-[var(--color-destructive)]'}`}>
                   {stat.change}
                 </span>
                 <span className="text-xs text-[var(--color-muted-foreground)]">{stat.description}</span>
