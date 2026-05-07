@@ -30,7 +30,7 @@ export function Header() {
     .toUpperCase() ?? 'U'
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between h-14 px-6 border-b bg-[var(--color-background)]/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-[var(--color-card)]/90 px-8 backdrop-blur-sm">
       <div />
       <div className="flex items-center gap-2">
         <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
